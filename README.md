@@ -2,12 +2,12 @@
 
 API para analisar jogos de xadrez.
 
-# postman
+# Postman
 
 Coleção com exemplos de consumo da api (teste.postman_collection.json)
 
 
-# install database
+# Install database
 
     sudo su postgres
     psql
@@ -16,9 +16,7 @@ Coleção com exemplos de consumo da api (teste.postman_collection.json)
     ALTER DATABASE teste OWNER TO teste;
     /connect teste;
 
-# update database
-    criar uma migrate
-    python manage.py db makemigrations
+# Update database
     
     atualizar o banco
     load-env
@@ -26,8 +24,9 @@ Coleção com exemplos de consumo da api (teste.postman_collection.json)
 
 # Docker
 
-Para realizar o build 
-    $ sudo docker build -t teste .
+docker-compose up
+
+# Objetivos
 
 1) registration of chess pieces (type/name and color)
  
@@ -126,7 +125,7 @@ Para realizar o build
         ]
     }
 
-# endpoits úteis
+# Endpoits úteis
 
 Criar tabuleiro
 
