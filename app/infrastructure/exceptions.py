@@ -12,3 +12,7 @@ class PieceTypeInvalid(Exception):
 
 class RepositoryError(Exception):
     pass
+
+class ConvertLetterToNumber(Exception):
+    pass
+

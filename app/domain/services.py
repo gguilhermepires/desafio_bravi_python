@@ -43,23 +43,25 @@ class Match(object):
         return cls._random_char(2)
 
     @classmethod
-    def _get_letter_number(cls, number):
-        if number == 'a':
+    def _get_letter_number(cls, letter):
+        if letter == 'a':
             return 1
-        if number == 'b':
+        if letter == 'b':
             return 2
-        if number == 'c':
+        if letter == 'c':
             return 3
-        if number == 'd':
+        if letter == 'd':
             return 4
-        if number == 'e':
+        if letter == 'e':
             return 5
-        if number == 'f':
+        if letter == 'f':
             return 6
-        if number == 'g':
+        if letter == 'g':
             return 7
-        if number == 'h':
+        if letter == 'h':
             return 8
+
+        raise exceptions.ConvertLetterToNumber(f'Could not converte letter({letter}) to number')
 
     @classmethod
     def _get_knight_moviments(cls, row, col, limits):
@@ -172,39 +174,4 @@ class Log(Service):
             })
         except Exception as ex:
             print(ex)
-    #
-    # @classmethod
-    # def create_piece(cls, payload):
-    #     return cls.domain.Piece.create({
-    #         'name': payload['name'],
-    #         'color': payload['color'],
-    #         'type': payload['type'],
-    #     })
-    #
-    # @classmethod
-    # def get_pieces(cls):
-    #     return cls.domain.Piece.get_pieces()
-    #
-    # @classmethod
-    # def get_piece_by_id(cls, piece_id):
-    #     return cls.domain.Piece.get_by_id(piece_id)
-    #
-    # @classmethod
-    # def update_one_piece(cls, piece_id, payload):
-    #     piece = cls.domain.Piece.get_by_id(piece_id)
-    #     piece.update_with_payload(payload)
-    #     return piece
-    #
-    # @classmethod
-    # def get_boards(cls):
-    #     return cls.domain.Board.get_boards()
-    #
-    # @classmethod
-    # def get_board_by_id(cls, board_id):
-    #     return cls.domain.Board.get_by_id(board_id)
-    #
-    # @classmethod
-    # def update_one_board(cls, board_id,payload):
-    #     board = cls.domain.Board.get_by_id(board_id)
-    #     board.update_with_payload(payload)
-    #     return board
+            
