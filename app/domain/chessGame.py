@@ -2,6 +2,29 @@ from app.domain import services
 from app import repositories, domain
 
 
+class Log(domain.Entity):
+    repository = repositories.Log
+
+    @property
+    def id(self):
+        return self.db_instance.id
+
+    @property
+    def data(self):
+        return self.db_instance.data
+
+    @classmethod
+    def create(cls, payload):
+        piece = cls.create_new_with_prepare(payload)
+        piece.save()
+        return piece
+
+    def as_dict(self):
+        return {
+            'id': self.id,
+            'data': self.data,
+        }
+
 class Piece(domain.Entity):
     repository = repositories.Piece
 
@@ -77,6 +100,10 @@ class Board(domain.Entity):
     def positions(self):
         return self.db_instance.positions
 
+    @property
+    def configuration(self):
+        return self.db_instance.configuration
+
     @classmethod
     def create(cls, payload):
         board = cls.create_new_with_prepare(payload)
@@ -104,7 +131,8 @@ class Board(domain.Entity):
         return {
             'id': self.id,
             'name': self.name,
-            'positions': self.positions
+            'positions': self.positions,
+            'configuration': self.configuration
         }
 
 
@@ -117,8 +145,9 @@ class Chess(object):
     def create_chessboard(self, payload):
         if payload['positions'] == '':
             board = {}
-            length_row = 9
-            length_col = 9
+            length_row = payload['configuration']['row_length'] if 'row_length' in payload['configuration'] else 9
+            length_col = payload['configuration']['col_length'] if 'col_length' in payload['configuration'] else 9
+
             for i in range(1, length_row):
                 for j in range(1, length_col):
                     letter = services.Match.get_letter(j)
@@ -128,6 +157,7 @@ class Chess(object):
         return Board.create({
             'name': payload['name'],
             'positions': payload.get('positions', {}),
+            'configuration': payload.get('configuration', {})
         })
 
     def create_piece(self, payload):
@@ -165,9 +195,9 @@ class Chess(object):
         location = payload['location']
         result = {}
 
-        possibilities = services.Match.analize_possibily(piece, location, board.positions)
+        possibilities = services.Match.analize_possibily(piece, location, board)
         for location_turn02 in possibilities:
-            possibility = services.Match.analize_possibily(piece, location_turn02, board.positions)
+            possibility = services.Match.analize_possibily(piece, location_turn02, board)
             result[location_turn02] = possibility
         return result
 

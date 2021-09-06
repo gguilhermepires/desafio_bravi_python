@@ -1,0 +1,1074 @@
+{
+	"info": {
+		"_postman_id": "55a1cad5-5ddd-49d7-b468-9336f5fd2199",
+		"name": "teste",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "healthcheck",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/v1/healthcheck",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"healthcheck"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "healthcheck",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/v1/healthcheck",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"healthcheck"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "23"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/1.0.1 Python/3.8.9"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 03 Sep 2021 11:45:28 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"result\": \"OK\"\n}"
+				}
+			]
+		},
+		{
+			"name": "create board",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"board teste 2\",\n    \"positions\": \"\",\n    \"configuration\": {\n        \"col_length\":10,\n        \"row_length\":10\n    }\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/v1/chess/boards",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"chess",
+						"boards"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "create board",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"board teste 2\",\n    \"positions\": \"\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/v1/chess/boards",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"chess",
+								"boards"
+							]
+						}
+					},
+					"status": "CREATED",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1183"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/1.0.1 Python/3.8.9"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 03 Sep 2021 12:26:24 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 9,\n    \"name\": \"board teste 2\",\n    \"positions\": {\n        \"1a\": 0,\n        \"1b\": 0,\n        \"1c\": 0,\n        \"1d\": 0,\n        \"1e\": 0,\n        \"1f\": 0,\n        \"1g\": 0,\n        \"1h\": 0,\n        \"2a\": 0,\n        \"2b\": 0,\n        \"2c\": 0,\n        \"2d\": 0,\n        \"2e\": 0,\n        \"2f\": 0,\n        \"2g\": 0,\n        \"2h\": 0,\n        \"3a\": 0,\n        \"3b\": 0,\n        \"3c\": 0,\n        \"3d\": 0,\n        \"3e\": 0,\n        \"3f\": 0,\n        \"3g\": 0,\n        \"3h\": 0,\n        \"4a\": 0,\n        \"4b\": 0,\n        \"4c\": 0,\n        \"4d\": 0,\n        \"4e\": 0,\n        \"4f\": 0,\n        \"4g\": 0,\n        \"4h\": 0,\n        \"5a\": 0,\n        \"5b\": 0,\n        \"5c\": 0,\n        \"5d\": 0,\n        \"5e\": 0,\n        \"5f\": 0,\n        \"5g\": 0,\n        \"5h\": 0,\n        \"6a\": 0,\n        \"6b\": 0,\n        \"6c\": 0,\n        \"6d\": 0,\n        \"6e\": 0,\n        \"6f\": 0,\n        \"6g\": 0,\n        \"6h\": 0,\n        \"7a\": 0,\n        \"7b\": 0,\n        \"7c\": 0,\n        \"7d\": 0,\n        \"7e\": 0,\n        \"7f\": 0,\n        \"7g\": 0,\n        \"7h\": 0,\n        \"8a\": 0,\n        \"8b\": 0,\n        \"8c\": 0,\n        \"8d\": 0,\n        \"8e\": 0,\n        \"8f\": 0,\n        \"8g\": 0,\n        \"8h\": 0\n    }\n  \n}"
+				}
+			]
+		},
+		{
+			"name": "get boards",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\n{\n    \"name\":\"piece teste\",\n    \"color\": \"WHITE\",\n    \"type\":  \"PAWN\",\n    \"rules\": [\n        {\"moveUp\":true}\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/v1/chess/boards",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"chess",
+						"boards"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "get boards",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\n{\n    \"name\":\"piece teste\",\n    \"color\": \"WHITE\",\n    \"type\":  \"PAWN\",\n    \"rules\": [\n        {\"moveUp\":true}\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/v1/chess/boards",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"chess",
+								"boards"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "3088"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/1.0.1 Python/3.8.9"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 04 Sep 2021 08:55:50 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 8,\n        \"name\": \"board teste 2\",\n        \"positions\": {\n            \"xs\": 233\n        },\n        \"possibilities\": {}\n    },\n    {\n        \"id\": 9,\n        \"name\": \"board teste 2\",\n        \"positions\": {\n            \"1a\": 0,\n            \"1b\": 0,\n            \"1c\": 0,\n            \"1d\": 0,\n            \"1e\": 0,\n            \"1f\": 0,\n            \"1g\": 0,\n            \"1h\": 0,\n            \"2a\": 0,\n            \"2b\": 0,\n            \"2c\": 0,\n            \"2d\": 0,\n            \"2e\": 0,\n            \"2f\": 0,\n            \"2g\": 0,\n            \"2h\": 0,\n            \"3a\": 0,\n            \"3b\": 0,\n            \"3c\": 0,\n            \"3d\": 0,\n            \"3e\": 0,\n            \"3f\": 0,\n            \"3g\": 0,\n            \"3h\": 0,\n            \"4a\": 0,\n            \"4b\": 0,\n            \"4c\": 0,\n            \"4d\": 0,\n            \"4e\": 0,\n            \"4f\": 0,\n            \"4g\": 0,\n            \"4h\": 0,\n            \"5a\": 0,\n            \"5b\": 0,\n            \"5c\": 0,\n            \"5d\": 0,\n            \"5e\": 0,\n            \"5f\": 0,\n            \"5g\": 0,\n            \"5h\": 0,\n            \"6a\": 0,\n            \"6b\": 0,\n            \"6c\": 0,\n            \"6d\": 0,\n            \"6e\": 0,\n            \"6f\": 0,\n            \"6g\": 0,\n            \"6h\": 0,\n            \"7a\": 0,\n            \"7b\": 0,\n            \"7c\": 0,\n            \"7d\": 0,\n            \"7e\": 0,\n            \"7f\": 0,\n            \"7g\": 0,\n            \"7h\": 0,\n            \"8a\": 0,\n            \"8b\": 0,\n            \"8c\": 0,\n            \"8d\": 0,\n            \"8e\": 0,\n            \"8f\": 0,\n            \"8g\": 0,\n            \"8h\": 0\n        },\n        \"possibilities\": {}\n    },\n    {\n        \"id\": 7,\n        \"name\": \"board teste 222\",\n        \"positions\": {\n            \"1a\": 0,\n            \"1b\": 0,\n            \"1c\": 0,\n            \"1d\": 0,\n            \"1e\": 0,\n            \"1f\": 0,\n            \"1g\": 0,\n            \"1h\": 0,\n            \"2a\": 0,\n            \"2b\": 0,\n            \"2c\": 0,\n            \"2d\": 0,\n            \"2e\": 0,\n            \"2f\": 0,\n            \"2g\": 0,\n            \"2h\": 0,\n            \"3a\": 0,\n            \"3b\": 0,\n            \"3c\": 0,\n            \"3d\": 0,\n            \"3e\": 0,\n            \"3f\": 0,\n            \"3g\": 0,\n            \"3h\": 0,\n            \"4a\": 0,\n            \"4b\": 0,\n            \"4c\": 0,\n            \"4d\": 0,\n            \"4e\": 0,\n            \"4f\": 0,\n            \"4g\": 0,\n            \"4h\": 0,\n            \"5a\": 0,\n            \"5b\": 0,\n            \"5c\": 0,\n            \"5d\": 0,\n            \"5e\": 0,\n            \"5f\": 0,\n            \"5g\": 0,\n            \"5h\": 0,\n            \"6a\": 0,\n            \"6b\": 0,\n            \"6c\": 0,\n            \"6d\": 0,\n            \"6e\": 0,\n            \"6f\": 0,\n            \"6g\": 0,\n            \"6h\": 0,\n            \"7a\": 0,\n            \"7b\": 0,\n            \"7c\": 0,\n            \"7d\": 0,\n            \"7e\": 0,\n            \"7f\": 0,\n            \"7g\": 0,\n            \"7h\": 0,\n            \"8a\": 0,\n            \"8b\": 0,\n            \"8c\": 0,\n            \"8d\": 0,\n            \"8e\": 0,\n            \"8f\": 0,\n            \"8g\": 0,\n            \"8h\": 0\n        },\n        \"possibilities\": {}\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "get boarad by id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\n{\n    \"name\":\"piece teste\",\n    \"color\": \"WHITE\",\n    \"type\":  \"PAWN\",\n    \"rules\": [\n        {\"moveUp\":true}\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/v1/chess/boards/:boardId",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"chess",
+						"boards",
+						":boardId"
+					],
+					"variable": [
+						{
+							"key": "boardId",
+							"value": "7"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "get boarad by id",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\n{\n    \"name\":\"piece teste\",\n    \"color\": \"WHITE\",\n    \"type\":  \"PAWN\",\n    \"rules\": [\n        {\"moveUp\":true}\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/v1/chess/boards/:boardId",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"chess",
+								"boards",
+								":boardId"
+							],
+							"variable": [
+								{
+									"key": "boardId",
+									"value": "7"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1183"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/1.0.1 Python/3.8.9"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 04 Sep 2021 00:17:12 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 7,\n    \"name\": \"board teste 2\",\n    \"positions\": {\n        \"1a\": 0,\n        \"1b\": 0,\n        \"1c\": 0,\n        \"1d\": 0,\n        \"1e\": 0,\n        \"1f\": 0,\n        \"1g\": 0,\n        \"1h\": 0,\n        \"2a\": 0,\n        \"2b\": 0,\n        \"2c\": 0,\n        \"2d\": 0,\n        \"2e\": 0,\n        \"2f\": 0,\n        \"2g\": 0,\n        \"2h\": 0,\n        \"3a\": 0,\n        \"3b\": 0,\n        \"3c\": 0,\n        \"3d\": 0,\n        \"3e\": 0,\n        \"3f\": 0,\n        \"3g\": 0,\n        \"3h\": 0,\n        \"4a\": 0,\n        \"4b\": 0,\n        \"4c\": 0,\n        \"4d\": 0,\n        \"4e\": 0,\n        \"4f\": 0,\n        \"4g\": 0,\n        \"4h\": 0,\n        \"5a\": 0,\n        \"5b\": 0,\n        \"5c\": 0,\n        \"5d\": 0,\n        \"5e\": 0,\n        \"5f\": 0,\n        \"5g\": 0,\n        \"5h\": 0,\n        \"6a\": 0,\n        \"6b\": 0,\n        \"6c\": 0,\n        \"6d\": 0,\n        \"6e\": 0,\n        \"6f\": 0,\n        \"6g\": 0,\n        \"6h\": 0,\n        \"7a\": 0,\n        \"7b\": 0,\n        \"7c\": 0,\n        \"7d\": 0,\n        \"7e\": 0,\n        \"7f\": 0,\n        \"7g\": 0,\n        \"7h\": 0,\n        \"8a\": 0,\n        \"8b\": 0,\n        \"8c\": 0,\n        \"8d\": 0,\n        \"8e\": 0,\n        \"8f\": 0,\n        \"8g\": 0,\n        \"8h\": 0\n    },\n    \"possibilities\": {}\n}"
+				}
+			]
+		},
+		{
+			"name": "get possibilities",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/v1/chess/boards/:boardId/possibilities?pieceId=3&location=5d",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"chess",
+						"boards",
+						":boardId",
+						"possibilities"
+					],
+					"query": [
+						{
+							"key": "pieceId",
+							"value": "3"
+						},
+						{
+							"key": "location",
+							"value": "5d"
+						}
+					],
+					"variable": [
+						{
+							"key": "boardId",
+							"value": "7"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "get possibilities",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/v1/chess/boards/:boardId/possibilities?pieceId=3&location=5d",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"chess",
+								"boards",
+								":boardId",
+								"possibilities"
+							],
+							"query": [
+								{
+									"key": "pieceId",
+									"value": "3"
+								},
+								{
+									"key": "location",
+									"value": "5d"
+								}
+							],
+							"variable": [
+								{
+									"key": "boardId",
+									"value": "7"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "931"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/1.0.1 Python/3.8.9"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 04 Sep 2021 13:43:06 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"7c\": [\n        \"8a\",\n        \"8e\",\n        \"6a\",\n        \"6e\",\n        \"5b\",\n        \"5d\"\n    ],\n    \"7e\": [\n        \"8c\",\n        \"8g\",\n        \"6c\",\n        \"6g\",\n        \"5d\",\n        \"5f\"\n    ],\n    \"6b\": [\n        \"8a\",\n        \"8c\",\n        \"7d\",\n        \"5d\",\n        \"4a\",\n        \"4c\"\n    ],\n    \"6f\": [\n        \"8e\",\n        \"8g\",\n        \"7d\",\n        \"7h\",\n        \"5d\",\n        \"5h\",\n        \"4e\",\n        \"4g\"\n    ],\n    \"4b\": [\n        \"6a\",\n        \"6c\",\n        \"5d\",\n        \"3d\",\n        \"2a\",\n        \"2c\"\n    ],\n    \"4f\": [\n        \"6e\",\n        \"6g\",\n        \"5d\",\n        \"5h\",\n        \"3d\",\n        \"3h\",\n        \"2e\",\n        \"2g\"\n    ],\n    \"3c\": [\n        \"5b\",\n        \"5d\",\n        \"4a\",\n        \"4e\",\n        \"2a\",\n        \"2e\",\n        \"1b\",\n        \"1d\"\n    ],\n    \"3e\": [\n        \"5d\",\n        \"5f\",\n        \"4c\",\n        \"4g\",\n        \"2c\",\n        \"2g\",\n        \"1d\",\n        \"1f\"\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "update board",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 7,\n    \"name\": \"board teste 222\",\n    \"positions\": {\n        \"1a\": 0,\n        \"1b\": 0,\n        \"1c\": 0,\n        \"1d\": 0,\n        \"1e\": 0,\n        \"1f\": 0,\n        \"1g\": 0,\n        \"1h\": 0,\n        \"2a\": {\n            \"id\": 1,\n            \"name\": \"PAWN\",\n            \"color\": \"BLACK\",\n            \"type\": \"PAWN\",\n            \"rules\": {}\n        },\n        \"2b\": 0,\n        \"2c\": 0,\n        \"2d\": 0,\n        \"2e\": 0,\n        \"2f\": 0,\n        \"2g\": 0,\n        \"2h\": 0,\n        \"3a\": 0,\n        \"3b\": 0,\n        \"3c\": 0,\n        \"3d\": 0,\n        \"3e\": 0,\n        \"3f\": 0,\n        \"3g\": 0,\n        \"3h\": 0,\n        \"4a\": 0,\n        \"4b\": 0,\n        \"4c\": 0,\n        \"4d\": 0,\n        \"4e\": 0,\n        \"4f\": 0,\n        \"4g\": 0,\n        \"4h\": 0,\n        \"5a\": 0,\n        \"5b\": 0,\n        \"5c\": 0,\n        \"5d\":   {\n        \"id\": 3,\n        \"name\": \"KNIGHT\",\n        \"color\": \"BLACK\",\n        \"type\": \"KNIGHT\",\n        \"rules\": {}\n    },\n        \"5e\": 0,\n        \"5f\": 0,\n        \"5g\": 0,\n        \"5h\": 0,\n        \"6a\": 0,\n        \"6b\": 0,\n        \"6c\": 0,\n        \"6d\": 0,\n        \"6e\": 0,\n        \"6f\": 0,\n        \"6g\": 0,\n        \"6h\": 0,\n        \"7a\": 0,\n        \"7b\": 0,\n        \"7c\": 0,\n        \"7d\": 0,\n        \"7e\": 0,\n        \"7f\": 0,\n        \"7g\": 0,\n        \"7h\": 0,\n        \"8a\": 0,\n        \"8b\": 0,\n        \"8c\": 0,\n        \"8d\": 0,\n        \"8e\": 0,\n        \"8f\": 0,\n        \"8g\": 0,\n        \"8h\": 0\n    },\n    \"possibilities\": {}\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/v1/chess/boards/:boardId",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"chess",
+						"boards",
+						":boardId"
+					],
+					"variable": [
+						{
+							"key": "boardId",
+							"value": "7"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "update board",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 7,\n    \"name\": \"board teste 222\",\n    \"positions\": {\n        \"1a\": 0,\n        \"1b\": 0,\n        \"1c\": 0,\n        \"1d\": 0,\n        \"1e\": 0,\n        \"1f\": 0,\n        \"1g\": 0,\n        \"1h\": 0,\n        \"2a\": 0,\n        \"2b\": 0,\n        \"2c\": 0,\n        \"2d\": 0,\n        \"2e\": 0,\n        \"2f\": 0,\n        \"2g\": 0,\n        \"2h\": 0,\n        \"3a\": 0,\n        \"3b\": 0,\n        \"3c\": 0,\n        \"3d\": 0,\n        \"3e\": 0,\n        \"3f\": 0,\n        \"3g\": 0,\n        \"3h\": 0,\n        \"4a\": 0,\n        \"4b\": 0,\n        \"4c\": 0,\n        \"4d\": 0,\n        \"4e\": 0,\n        \"4f\": 0,\n        \"4g\": 0,\n        \"4h\": 0,\n        \"5a\": 0,\n        \"5b\": 0,\n        \"5c\": 0,\n        \"5d\": 0,\n        \"5e\": 0,\n        \"5f\": 0,\n        \"5g\": 0,\n        \"5h\": 0,\n        \"6a\": 0,\n        \"6b\": 0,\n        \"6c\": 0,\n        \"6d\": 0,\n        \"6e\": 0,\n        \"6f\": 0,\n        \"6g\": 0,\n        \"6h\": 0,\n        \"7a\": 0,\n        \"7b\": 0,\n        \"7c\": 0,\n        \"7d\": 0,\n        \"7e\": 0,\n        \"7f\": 0,\n        \"7g\": 0,\n        \"7h\": 0,\n        \"8a\": 0,\n        \"8b\": 0,\n        \"8c\": 0,\n        \"8d\": 0,\n        \"8e\": 0,\n        \"8f\": 0,\n        \"8g\": 0,\n        \"8h\": 0\n    },\n    \"possibilities\": {}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/v1/chess/boards/:boardId",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"chess",
+								"boards",
+								":boardId"
+							],
+							"variable": [
+								{
+									"key": "boardId",
+									"value": "7"
+								}
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "create piece",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\n{\n    \"name\":\"piece teste\",\n    \"color\": \"WHITE\",\n    \"type\":  \"KNIGHT\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/v1/chess/pieces",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"chess",
+						"pieces"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "create piece",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\n{\n    \"name\":\"piece teste\",\n    \"color\": \"WHITE\",\n    \"type\":  \"PAWN\",\n    \"rules\": [\n        {\"moveUp\":true}\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/v1/chess/pieces",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"chess",
+								"pieces"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "154"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/1.0.1 Python/3.8.9"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 03 Sep 2021 12:29:06 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 5,\n    \"name\": \"piece teste\",\n    \"color\": \"WHITE\",\n    \"type\": \"PAWN\",\n    \"rules\": [\n        {\n            \"moveUp\": true\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "get pieces",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\n{\n    \"name\":\"piece teste\",\n    \"color\": \"WHITE\",\n    \"type\":  \"PAWN\",\n    \"rules\": [\n        {\"moveUp\":true}\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/v1/chess/pieces",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"chess",
+						"pieces"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "get pieces",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\n{\n    \"name\":\"piece teste\",\n    \"color\": \"WHITE\",\n    \"type\":  \"PAWN\",\n    \"rules\": [\n        {\"moveUp\":true}\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/v1/chess/pieces",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"chess",
+								"pieces"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "507"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/1.0.1 Python/3.8.9"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 04 Sep 2021 08:55:58 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"name\": \"PAWN\",\n        \"color\": \"BLACK\",\n        \"type\": \"PAWN\",\n        \"rules\": {}\n    },\n    {\n        \"id\": 2,\n        \"name\": \"PAWN\",\n        \"color\": \"WHITE\",\n        \"type\": \"PAWN\",\n        \"rules\": {}\n    },\n    {\n        \"id\": 3,\n        \"name\": \"KNIGHT\",\n        \"color\": \"BLACK\",\n        \"type\": \"KNIGHT\",\n        \"rules\": {}\n    },\n    {\n        \"id\": 4,\n        \"name\": \"KNIGHT\",\n        \"color\": \"WHITE\",\n        \"type\": \"KNIGHT\",\n        \"rules\": {}\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "get piece by id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\n{\n    \"name\":\"piece teste\",\n    \"color\": \"WHITE\",\n    \"type\":  \"PAWN\",\n    \"rules\": [\n        {\"moveUp\":true}\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/v1/chess/pieces/:piece_id",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"chess",
+						"pieces",
+						":piece_id"
+					],
+					"variable": [
+						{
+							"key": "piece_id",
+							"value": "4"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "get piece by id",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\n{\n    \"name\":\"piece teste\",\n    \"color\": \"WHITE\",\n    \"type\":  \"PAWN\",\n    \"rules\": [\n        {\"moveUp\":true}\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/v1/chess/pieces/:piece_id",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"chess",
+								"pieces",
+								":piece_id"
+							],
+							"variable": [
+								{
+									"key": "piece_id",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "99"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/1.0.1 Python/3.8.9"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 04 Sep 2021 08:55:36 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 4,\n    \"name\": \"KNIGHT\",\n    \"color\": \"WHITE\",\n    \"type\": \"KNIGHT\",\n    \"rules\": {}\n}"
+				}
+			]
+		},
+		{
+			"name": "update piece",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"piece teste 224\",\n    \"color\": \"WHITE\",\n    \"type\": \"PAWN\",\n    \"rules\": [\n        {\n            \"moveUp\": true\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/v1/chess/pieces/:piece_id",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"chess",
+						"pieces",
+						":piece_id"
+					],
+					"variable": [
+						{
+							"key": "piece_id",
+							"value": "4"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "update piece",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"piece teste 224\",\n    \"color\": \"WHITE\",\n    \"type\": \"PAWN\",\n    \"rules\": [\n        {\n            \"moveUp\": true\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/v1/chess/pieces/:piece_id",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"chess",
+								"pieces",
+								":piece_id"
+							],
+							"variable": [
+								{
+									"key": "piece_id",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "158"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/1.0.1 Python/3.8.9"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 04 Sep 2021 09:00:56 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 4,\n    \"name\": \"piece teste 224\",\n    \"color\": \"WHITE\",\n    \"type\": \"PAWN\",\n    \"rules\": [\n        {\n            \"moveUp\": true\n        }\n    ]\n}"
+				}
+			]
+		}
+	]
+}

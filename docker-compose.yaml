@@ -1,0 +1,38 @@
+version: "3.9"
+
+services:
+  db:
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: teste
+      POSTGRES_USER: teste
+      POSTGRES_DB: teste
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  teste-api:
+    build:
+      context:  .
+      network: host
+      dockerfile: Dockerfile
+    env_file:
+        - .env
+    entrypoint: ['flask', 'run']
+
+    depends_on:
+      - db
+    network_mode: host
+
+  migration:
+    build:
+      context: .
+      network: host
+      dockerfile: Dockerfile
+    command: bash -c "pip install Flask-Migrate==2.7.0 && python manage.py db upgrade"
+    volumes:
+      - .:/code
+    depends_on:
+      - db
+    network_mode: host

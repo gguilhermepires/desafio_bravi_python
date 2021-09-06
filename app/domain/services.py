@@ -1,20 +1,26 @@
 # -*- coding: utf-8 -*-
 from importlib import import_module
 import app
+import random
+import string
 from app.infrastructure import exceptions
 
 
-# class Service(object):
-#     _domain = None
-#
-#     @app.ClassProperty
-#     def domain(cls):
-#         if cls._domain is None:
-#             raise exceptions.InvalidDomain('You should use a specific service implementation')
-#         return import_module(cls._domain)
-#
+class Service(object):
+    _domain = None
+
+    @app.ClassProperty
+    def domain(cls):
+        if cls._domain is None:
+            raise exceptions.InvalidDomain('You should use a specific service implementation')
+        return import_module(cls._domain)
+
 
 class Match(object):
+
+    @classmethod
+    def _random_char(cls, y):
+        return ''.join(random.choice(string.ascii_letters) for x in range(y))
 
     @classmethod
     def get_letter(cls, number):
@@ -34,6 +40,7 @@ class Match(object):
             return 'g'
         if number == 8:
             return 'h'
+        return cls._random_char(2)
 
     @classmethod
     def _get_letter_number(cls, number):
@@ -98,13 +105,13 @@ class Match(object):
         return moviments
 
     @classmethod
-    def _get_moviments(cls, position, piece_type):
+    def _get_moviments(cls, position, piece_type, configuration):
         row = int(position[0])
         col = cls._get_letter_number(position[1])
         limits = {
-            'limit_up_row': 9,
+            'limit_up_row': configuration['row_length'] if 'row_length' in configuration else 9,
             'limit_down_row': 0,
-            'limit_right_col': 9,
+            'limit_right_col': configuration['col_length'] if 'col_length' in configuration else 9,
             'limit_left_col': 0
         }
 
@@ -139,29 +146,32 @@ class Match(object):
         return list(moviment.values())[0]
 
     @classmethod
-    def analize_possibily(cls, piece, location, positions):
+    def analize_possibily(cls, piece, location, board):
         possibilities = []
+        positions = board.positions
         piece_type = piece.type
         if piece_type == 'KNIGHT':
-            moviments = cls._get_moviments(location, piece_type)
+            moviments = cls._get_moviments(location, piece_type, board.configuration)
             possibilities = cls._get_possibilities(moviments, piece, positions)
         return possibilities
 
 
-class Chess(object):
-    pass
-    # _domain = 'app.domain.chessGame'
-    #
-    # @classmethod
-    # def create(cls):
-    #     return cls()
-    #
-    # @classmethod
-    # def create_board_from_payload(cls, payload):
-    #     return cls.domain.Board.create({
-    #         'name': payload['name'],
-    #         'positions': payload.get('positions', {})
-    #     })
+class Log(Service):
+    _domain = 'app.domain.chessGame'
+
+    @classmethod
+    def create(cls):
+        return cls()
+
+    @classmethod
+    def create_log(cls, payload):
+        try:
+            mod = import_module(cls._domain)
+            return mod.Log.create({
+                'data': payload
+            })
+        except Exception as ex:
+            print(ex)
     #
     # @classmethod
     # def create_piece(cls, payload):

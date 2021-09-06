@@ -24,7 +24,7 @@ def upgrade():
                     sa.Column('id', sa.Integer(), nullable=False),
                     sa.Column('name', sa.String(), nullable=False),
                     sa.Column('positions', postgresql.JSONB(astext_type=sa.Text()), nullable=False),
-                    sa.Column('possibilities', postgresql.JSONB(astext_type=sa.Text()), nullable=False),
+                    sa.Column('configuration', postgresql.JSONB(astext_type=sa.Text()), nullable=False),
                     sa.Column('created_at', sa.DateTime(), nullable=False),
                     sa.Column('updated_at', sa.DateTime(), nullable=True),
                     sa.PrimaryKeyConstraint('id')
@@ -34,6 +34,14 @@ def upgrade():
                     sa.Column('name', sa.String(), nullable=False),
                     sa.Column('color', sa.String(), nullable=False),
                     sa.Column('type', sa.String(), nullable=False),
+                    sa.Column('created_at', sa.DateTime(), nullable=False),
+                    sa.Column('updated_at', sa.DateTime(), nullable=True),
+                    sa.PrimaryKeyConstraint('id')
+                    )
+
+    op.create_table('teste_log',
+                    sa.Column('id', sa.Integer(), nullable=False),
+                    sa.Column('data', postgresql.JSONB(astext_type=sa.Text()), nullable=False),
                     sa.Column('created_at', sa.DateTime(), nullable=False),
                     sa.Column('updated_at', sa.DateTime(), nullable=True),
                     sa.PrimaryKeyConstraint('id')

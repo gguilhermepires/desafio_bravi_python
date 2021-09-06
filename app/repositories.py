@@ -113,6 +113,7 @@ class ChessBoard(db.Model, AuditMixin, AbstractModel):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String, nullable=False)
     positions = db.Column(postgresql.JSONB, nullable=False)
+    configuration = db.Column(postgresql.JSONB, nullable=False)
 
 
 class Piece(db.Model, AuditMixin, AbstractModel):
@@ -121,3 +122,9 @@ class Piece(db.Model, AuditMixin, AbstractModel):
     name = db.Column(db.String, nullable=False)
     color = db.Column(db.String, nullable=True)
     type = db.Column(db.String, nullable=True)
+
+
+class Log(db.Model, AuditMixin, AbstractModel):
+    __tablename__ = 'teste_log'
+    id = db.Column(db.Integer, primary_key=True)
+    data = db.Column(postgresql.JSONB, nullable=False)

@@ -3,24 +3,22 @@ import re
 from functools import wraps
 from flask import request, g, Response
 from flask_restful import Resource
+
+from app.domain import services
 from app.domain.chessGame import Chess
 
 
-def login_required(f):
-    @wraps(f)
-    def decorated_function(*args, **kwargs):
-        authenticated = getattr(g, 'authenticated', False)
-        if not authenticated:
-            return Response('{"result": "Not Authorized"}', 401, content_type='application/json')
-        return f(*args, **kwargs)
-    return decorated_function
+def log(func):
+    def wrapper(*args, **kwargs):
+        try:
+            val = func(*args, **kwargs)
+        except Exception as ex:
+            val = str(ex)
+        services.Log.create_log(val)
+        print(f'Retorno requisição:{val}')
+        return val
 
-
-def not_allowed(f):
-    @wraps(f)
-    def decorated_function(*args, **kwargs):
-        return Response('{"result": "Method not allowed"}', 405, content_type='application/json')
-    return decorated_function
+    return wrapper
 
 
 class ResourceBase(Resource):
@@ -105,23 +103,14 @@ class ResourceBase(Resource):
 
 
 class HealthcheckResource(ResourceBase):
+    @log
     def get(self):
-        """
-            .. iheader::
-
-            .. iendpoint::
-                '/api/blueprints/<int:blueprint_id>/assembly-lines/<int:assembly_line_id>/workstations', '/api/blueprints/<int:blueprint_id>/assembly-lines/<int:assembly_line_id>/workstations/<int:workstation_id>'
-
-            .. ireturn_example::
-                {
-                    "result": "OK"
-                }
-        """
+        raise Exception('teteee')
         return self.return_ok()
 
 
 class ChessBoardResource(ResourceBase):
-
+    @log
     def get(self, board_id=None):
         try:
             if board_id:
@@ -131,6 +120,7 @@ class ChessBoardResource(ResourceBase):
         except Exception as ex:
             return self.response_with_error({'exception': str(ex)})
 
+    @log
     def post(self):
         try:
             board = self.me.create_chessboard(self.payload)
@@ -141,6 +131,7 @@ class ChessBoardResource(ResourceBase):
         except Exception as ex:
             return self.response_with_error({'exception': str(ex)})
 
+    @log
     def put(self, board_id):
         try:
             return self.response(self.me.update_board(board_id, self.payload).as_dict())
@@ -149,7 +140,7 @@ class ChessBoardResource(ResourceBase):
 
 
 class ChessBoardPossibilitiesResource(ResourceBase):
-
+    @log
     def get(self, board_id=None):
         try:
             teste = self.me.get_board_possibility(board_id, self.payload)
@@ -159,7 +150,7 @@ class ChessBoardPossibilitiesResource(ResourceBase):
 
 
 class PieceResource(ResourceBase):
-
+    @log
     def get(self, piece_id=None):
         try:
             if piece_id:
@@ -168,12 +159,14 @@ class PieceResource(ResourceBase):
         except Exception as ex:
             return self.response_with_error({'exception': str(ex)})
 
+    @log
     def post(self):
         try:
             return self.response(self.me.create_piece(self.payload).as_dict(), 201)
         except Exception as ex:
             return self.response_with_error({'exception': str(ex)})
 
+    @log
     def put(self, piece_id):
         try:
             return self.response(self.me.update_one_piece(piece_id, self.payload).as_dict())

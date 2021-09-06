@@ -21,37 +21,15 @@ depends_on = None
 
 def upgrade():
     op.execute(
-        postgresql.insert(repositories.Piece).values(
-            {
-            'name': 'PAWN',
-            'type': 'PAWN',
-            'rules': {},
-            'color': 'BLACK',
-        })
-    )
-
-    op.execute(
-        postgresql.insert(repositories.Piece).values(
-        {
-            'name': 'PAWN',
-            'type': 'PAWN',
-            'rules': {},
-            'color': 'WHITE',
-        }))
-    op.execute(
-        postgresql.insert(repositories.Piece).values(
-        {
+        postgresql.insert(repositories.Piece).values({
             'name': 'KNIGHT',
             'type': 'KNIGHT',
-            'rules': {},
             'color': 'BLACK',
         }))
     op.execute(
-        postgresql.insert(repositories.Piece).values(
-        {
+        postgresql.insert(repositories.Piece).values({
             'name': 'KNIGHT',
             'type': 'KNIGHT',
-            'rules': {},
             'color': 'WHITE',
         })
     )
@@ -60,5 +38,3 @@ def upgrade():
 def downgrade():
     repositories.Piece.query.filter_by(name='KNIGHT').first().delete()
     repositories.Piece.query.filter_by(name='KNIGHT').first().delete()
-    repositories.Piece.query.filter_by(name='PAWN').first().delete()
-    repositories.Piece.query.filter_by(name='PAWN').first().delete()
